@@ -1,0 +1,487 @@
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.preloader {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  transition: all 1s;
+}
+
+.preloader:before {
+  content: "";
+  background: #ffc107;
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  animation: slide 5s ease-in-out infinite alternate-reverse both;
+  /* bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0; */
+}
+
+.preloader:after {
+  content: "";
+  background: #3b434a;
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  animation: slide 2s ease-in-out infinite alternate-reverse both;
+  /* bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0; */
+}
+
+.preloader > span {
+  color: white;
+  margin-top: 105px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: 'Righteous', cursive;  
+  opacity: 0;
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-10%);
+  }
+  35% {
+    width: 50%;
+    transform: translateX(200%);
+  }
+  45% {
+    width: 5%;
+    transform: translateX(200%);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(0%);
+  }
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(255, 255, 255);
+  border-radius: 0px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #02686b51;
+  border-radius: 2px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #02686baf;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 50px;
+}
+
+.navbar-brand > img {
+  height: 45px;
+}
+
+#icon {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  transition: 0.4s;
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.navbar-toggler {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.nav-item {
+  margin: auto 20px;
+}
+
+
+.nav-link:after {
+  display: block;
+  content: '';
+  border-bottom: solid 1px white;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.nav-link:hover:after {
+  transform: scaleX(1.2);
+}
+
+.nav-item > .active {
+  color: #ffc107 !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: rgba(25, 28, 31, 0.8);
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: auto;
+    align-items: center;
+  }
+  .nav-link {
+    display: inline-block;
+    width: max-content;
+  }
+
+  .nav-link:first {
+    float: left;
+  }
+}
+
+#header {
+  z-index: 997;
+  transition: all 0.5s;
+  padding: 10px 0;
+  background: rgba(25, 28, 31, 0.8);
+}
+
+#header.header-transparent {
+  background: transparent;
+}
+
+#header.header-scrolled {
+  background: rgba(25, 28, 31, 0.6);
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/hero-bg.png") top right;
+  background-size: cover;
+  position: absolute; 
+  background-attachment: fixed;
+  animation: bg 20s ease-in-out infinite alternate-reverse both;
+  /* transition: 5s; */
+}
+
+@keyframes bg {
+  0% {
+    background-position-x: 0%;
+    background-position-y: 0%;
+  }
+  50% {
+    background-position-x: 10%;
+    background-position-y: 10%;
+  }
+  100% {
+    background-position-x: 90%;
+    background-position-y: 90%;
+  }
+}
+
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+main {
+  position: absolute;
+  width: 100%;
+}
+
+.section {
+  padding-top: 100px;
+}
+.section:last-child {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #3b434a;
+  position: relative;
+  z-index: 2;
+  font-family: 'Righteous', cursive;
+}
+
+.section-title span {
+  position: absolute;
+  top: 30px;
+  color: #eef0f2;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  line-height: 0;
+  font-family: 'Righteous', cursive;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .section-title span {
+    font-size: 38px;
+  }
+}
+
+#home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 15px;
+}
+
+#name {
+  font-family: 'Righteous', cursive;
+}
+
+#work {
+  font-family: 'Aboreto', cursive;
+}
+
+.scroller {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  animation-delay: 1s;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+#scroller:hover {
+  animation-play-state: paused;
+}
+
+#work {
+  transform: translate(-100%, 0%);
+  opacity: 0;
+}
+
+.profil-link {
+  text-decoration: none;
+  font-size: 55px;
+  margin: 0 20px;
+  padding: 5px 0px;
+  color: #3b434a;
+  transition: all;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+}
+
+.profil-link:hover {
+  text-decoration: none;
+  color: #3b434a;
+}
+
+.project {
+  background-size: cover;
+  background-position: top left;
+  height: max-content;
+  min-height: 250px;
+  width: 100%;
+  position: relative;
+  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.2);
+  cursor: pointer !important ;
+  margin: 20px 0;
+}
+
+.project:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition-duration: 0.5s;
+}
+
+.project:hover:before {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.project > .project-title {
+  font-weight: 800;
+  position: relative;
+  font-family: 'Righteous', cursive;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  /* letter-spacing: 10px; */
+  font-size: 44px;
+  top: 0;
+  padding: 40px 50px;
+  padding-bottom: 10px;
+  color: white;
+  opacity: 0%;
+  transition: opacity tranform;
+  transition-duration: 0.5s;
+  transform: translateY(-30px);
+}
+
+.project:hover > .project-title {
+  display: block;
+  opacity: 100%;
+  transform: translateY(0px);
+}
+
+.project > .project-desc {
+  font-size: 12px;
+  position: relative;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  /* letter-spacing: 10px; */
+  top: 0;
+  padding: 10px 50px;
+  color: white;
+  opacity: 0%;
+  transition: opacity tranform;
+  transition-duration: 0.5s;
+  transform: translateY(30px);
+  padding-bottom: 40px;
+}
+
+.project:hover > .project-desc {
+  display: block;
+  opacity: 100%;
+  transform: translateY(0px);
+}
+
+@media (max-width: 575px ) {
+  .project > .project-title {
+    text-align: center;
+    font-size: 30px;
+    padding: 20px 10px;
+    padding-bottom: 10px;
+  }
+  .project > .project-desc {
+    text-align: center;
+    font-size: 12px;
+    padding: 5px 10px;
+    padding-bottom: 10px;
+  }
+}
+footer {
+  padding: 80px 0px;
+  width: 100%;
+}
+
+footer .profil-link {
+  color: white;
+  font-size: 18px;
+  font-family: 'Righteous', cursive;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+footer .copy {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  display: block;
+  margin-top: 40px;
+  text-align: center
+}
+
+@media (max-width: 575px) {
+  footer .profil-link {
+    font-size: 12px;
+  }
+
+  footer .copy {
+    font-size: 10px;
+  }
+}
