@@ -359,13 +359,13 @@ main {
   padding: 5px 0px;
   color: #3b434a;
   transition: all;
-  transition-duration: 2s;
+  transition-duration: 0.25s;
   transition-timing-function: ease-in-out;
 }
 
 .profil-link:hover {
   text-decoration: none;
-  color: #3b434a;
+  color: #ffc107;
 }
 
 .project {
@@ -438,6 +438,16 @@ main {
   display: block;
   opacity: 100%;
   transform: translateY(0px);
+}
+
+.project > .project-desc > a {
+  color: white;
+  text-decoration: none;
+}
+
+.project > .project-desc > a:hover {
+  color: #ffc107;
+  text-decoration: none;
 }
 
 @media (max-width: 575px ) {
